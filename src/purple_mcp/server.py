@@ -102,7 +102,7 @@ from purple_mcp.tools.vulnerabilities import (
 # Initialize Pydantic Logfire observability if configured
 initialize_logfire()
 
-app: fastmcp.FastMCP[None] = fastmcp.FastMCP("PurpleAIMCP")
+app: fastmcp.FastMCP[None] = fastmcp.FastMCP("PurpleAIMCP", host="0.0.0.0", stateless_http=True)
 
 # Register MCP tools
 app.tool(description=PURPLE_AI_DESCRIPTION)(purple_ai)
